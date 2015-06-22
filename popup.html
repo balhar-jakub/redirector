@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/knockout-3.3.0.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="popup.js"></script>
+</head>
+<body id="rules">
+<table>
+    <tr>
+        <td>From</td>
+        <td>To</td>
+        <td>Active</td>
+    </tr>
+    <tbody data-bind="foreach: rules">
+        <tr>
+            <td><input type="text" data-bind="value: from"/></td>
+            <td><input type="text" data-bind="value: to"/></td>
+            <td><input type="checkbox" name="active" data-bind="checked: active"/></td>
+        </tr>
+    </tbody>
+</table>
+<input type="button" value="Add" data-bind="click: add"/>
+<input type="button" value="Save" data-bind="click: save"/>
+</body>
+</html>

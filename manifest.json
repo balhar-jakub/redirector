@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Redirector",
+  "description": "It allows user to specify list of web pages from which it want to be redirected to other page.",
+  "version": "1.0",
+
+  "icons": {
+    "48": "img/redirection48.png",
+    "128": "img/redirection128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "img/redirection48.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["redirect.js"],
+    "run_at": "document_start"
+  }],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
